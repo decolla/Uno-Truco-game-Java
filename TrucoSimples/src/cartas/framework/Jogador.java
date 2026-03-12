@@ -1,12 +1,12 @@
 package cartas.framework;
 
-// Classe de jogador
+// classe de jogador
 public class Jogador {
     private final int id;
     private final Mao mao;
-    // Uno não contém duplas igual truco, ficará restrita ao jogo
+    // Uno não contém duplas igual truco, ficará restrita ao jogo que implementará
 
-    public Jogador(int id, int duplaId) {
+    public Jogador(int id) {
         this.id = id;
         this.mao = new Mao();
     }

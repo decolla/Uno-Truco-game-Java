@@ -21,6 +21,11 @@ public class Baralho {
         return cartas.remove(cartas.size() - 1);
     }
 
+    // metodo para inserir cartas
+    public void adicionarCarta(Carta carta) {
+        this.cartas.add(carta);
+    }
+
     public boolean isEmpty() {
         return cartas.isEmpty();
     }

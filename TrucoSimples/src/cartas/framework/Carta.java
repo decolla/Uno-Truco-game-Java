@@ -6,33 +6,22 @@ package cartas.framework;
 import java.util.Objects;
 
 // transformei em uma classe genérica simples
-public class Carta<T> {
-
+public abstract class Carta {
     private final String valor;
     private final String classe;
 
-    public Carta(String valor, String naipe) {
+    public Carta(String valor, String classe) {
         this.valor = valor;
-        this.classe = naipe;
+        this.classe = classe;
     }
 
     public String getValor() { return valor; }
     public String getNaipe() { return classe; }
 
-    /*
+    // força as subclasses a implementarem como a carta aparece na tela
     @Override
-    public String toString() {
-        String simbolo;
-        switch (classe) {
-            case Constants.COPAS: simbolo = Constants.SIMBOLO_COPAS; break;
-            case Constants.OUROS: simbolo = Constants.SIMBOLO_OUROS; break;
-            case Constants.ESPADAS: simbolo = Constants.SIMBOLO_ESPADAS; break;
-            case Constants.PAUS: simbolo = Constants.SIMBOLO_PAUS; break;
-            default: simbolo = "";
-        }
-        return valor + simbolo;
-    }
-*/
+    public abstract String toString();
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
