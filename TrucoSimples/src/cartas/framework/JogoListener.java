@@ -9,7 +9,7 @@ package cartas.framework;
 */
 public interface JogoListener {
 
-    // chamado sempre que algo visual deve ser atualizado
+    // é chamado sempre que algo visual deve ser atualizado
     void onEstadoAlterado();
 
     // exibe mensagens genéricas

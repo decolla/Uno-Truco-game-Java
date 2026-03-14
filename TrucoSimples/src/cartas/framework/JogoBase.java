@@ -30,18 +30,21 @@ public abstract class JogoBase {
         this.listeners.add(listener);
     }
 
+    // norifica se algum estado foi alterado (padrão observer)
     protected void notificarEstadoAlterado() {
         for (JogoListener l : listeners) {
             l.onEstadoAlterado();
         }
     }
 
+    // notifica mensagem
     protected void notificarMensagem(String msg) {
         for (JogoListener l : listeners) {
             l.onMensagem(msg);
         }
     }
 
+    // notifica fim de jogo
     protected void notificarFimDeJogo(String msg) {
         for (JogoListener l : listeners) {
             l.onJogoTerminado(msg);

@@ -6,16 +6,19 @@ import java.util.*;
 public class Baralho {
     private final List<Carta> cartas;
 
+    // baralho vazio
     public Baralho() {
         this.cartas = new ArrayList<>();
     }
 
-    // a responsabilidade de preencher a listaq de cartas será passada por uma Factory de cada jogo
+    // a responsabilidade de preencher a lista de cartas será passada por uma Factory de cada jogo
 
+    // embaralhar as cartas di baralho
     public void embaralhar() {
         Collections.shuffle(cartas, new Random());
     }
 
+    // comprar uma carta do baralho
     public Carta comprarCarta() {
         if (cartas.isEmpty()) return null;
         return cartas.remove(cartas.size() - 1);
