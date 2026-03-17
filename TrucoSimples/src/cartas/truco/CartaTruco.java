@@ -12,9 +12,21 @@ public class CartaTruco extends Carta {
 
     public int getForca() { return forca; }
 
+    // traduz o naipe para o simbolo
+    private String getSimboloNaipe() {
+        switch (getClasse()) {
+            case Constants.COPAS: return Constants.SIMBOLO_COPAS;
+            case Constants.OUROS: return Constants.SIMBOLO_OUROS;
+            case Constants.ESPADAS: return Constants.SIMBOLO_ESPADAS;
+            case Constants.PAUS: return Constants.SIMBOLO_PAUS;
+            default: return getClasse(); // Fallback de segurança
+        }
+    }
+
     @Override
-    public String toString(){
-        // como a carta deve aparecer na interface
-        return getValor() + " de " + getClasse();
+    public String toString() {
+        // Substituí o " de " por um espaço simples para o botão não ficar com texto muito longo
+        // Exemplo de saída: "4 ♣" ou "Ás ♠"
+        return getValor() + " " + getSimboloNaipe();
     }
 }
