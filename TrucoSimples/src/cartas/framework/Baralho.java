@@ -13,7 +13,7 @@ public class Baralho {
 
     // a responsabilidade de preencher a lista de cartas será passada por uma Factory de cada jogo
 
-    // embaralhar as cartas di baralho
+    // embaralhar as cartas do baralho
     public void embaralhar() {
         Collections.shuffle(cartas, new Random());
     }

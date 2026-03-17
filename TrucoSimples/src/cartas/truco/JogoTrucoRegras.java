@@ -38,4 +38,24 @@ public class JogoTrucoRegras extends JogoBase {
     private int duplaQuePodeAumentar = -1; // -1 = ninguém; 0 ou 1 = dupla com direito de aumentar
 
     public JogoTrucoRegras() {}
+
+    @Override
+    protected void prepararBaralho() {
+
+    }
+
+    @Override
+    protected void distribuirCartas() {
+
+    }
+
+    @Override
+    protected void iniciarPrimeiroTurno() {
+
+    }
+
+    @Override
+    public void jogarCarta(int jogadorId, int indiceCarta) {
+
+    }
 }

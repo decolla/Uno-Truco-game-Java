@@ -16,7 +16,7 @@ public abstract class Carta {
     }
 
     public String getValor() { return valor; }
-    public String getNaipe() { return classe; }
+    public String getClasse() { return classe; }
 
     // força as subclasses a implementarem como a carta aparece na tela
     @Override

@@ -72,6 +72,7 @@ public abstract class JogoBase {
     protected abstract void distribuirCartas();
     protected abstract void iniciarPrimeiroTurno();
 
+
     // valida e executa jogada
     public abstract void jogarCarta(int jogadorId, int indiceCarta);
 

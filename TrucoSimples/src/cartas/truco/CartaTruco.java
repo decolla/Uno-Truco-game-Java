@@ -15,6 +15,6 @@ public class CartaTruco extends Carta {
     @Override
     public String toString(){
         // como a carta deve aparecer na interface
-        return getValor() + " de " + getNaipe();
+        return getValor() + " de " + getClasse();
     }
 }
