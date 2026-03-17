@@ -50,19 +50,40 @@ public class MesaUno extends MesaVisual {
 
         CartaUno cartaCentro = (CartaUno) meuJogo.getCartaNaMesa();
 
-        // representa a última carta jogada no campo
+        // botão que representa a última carta jogada no campo
         JButton botaoCentro = new JButton(cartaCentro.getValor());
         botaoCentro.setPreferredSize(new Dimension(80,120));
         pintarBotao(botaoCentro, cartaCentro.getClasse());
         this.campo.add(botaoCentro);
 
+        // botão para comprar
+        JButton botaoComprar = new JButton("Comprar");
+        botaoComprar.setPreferredSize(new Dimension(100, 50));
+        botaoComprar.setBackground(Color.white);
+        botaoComprar.addActionListener(e->{
+            meuJogo.comprarCarta(vez);
+        });
+        this.campo.add(botaoComprar);
+
         // laço para desenhar as mãos dos 4 jogadores
         for (int i = 0; i < 4; i++){
             Jogador jogadorAtual = meuJogo.getJogador(i);
 
+            // criei uma variável para armazenar o id da carta
+            int j = 0;
+
             // percorre a mão do jogador de índice "i" e desenha suas cartas
             for (Carta c : jogadorAtual.getMao().getCartas()){
                 JButton botaoCarta = new JButton(c.getValor());
+
+                int idJogador = i;
+                int idCarta = j;
+
+                // adicionar listener para cada carta da mão
+                botaoCarta.addActionListener(e->{
+                    this.jogo.jogarCarta(idJogador, idCarta);
+                });
+
                 pintarBotao(botaoCarta, c.getClasse());
 
                 // jogador sul (eu)
@@ -86,6 +107,8 @@ public class MesaUno extends MesaVisual {
                     botaoCarta.setPreferredSize(new Dimension(120, 80));
                     this.areaLeste.add(botaoCarta);
                 }
+
+                j++;
             }
         }
 
@@ -114,7 +137,7 @@ public class MesaUno extends MesaVisual {
 
             case "Preta":
                 botao.setBackground(Color.black);
-                // mudei a fonte para conseguir enxergar na carta preta
+                // mudei a fonte para branco para conseguir enxergar na carta preta
                 botao.setForeground(Color.white);
                 break;
         }

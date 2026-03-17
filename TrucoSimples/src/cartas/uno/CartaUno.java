@@ -2,21 +2,17 @@ package cartas.uno;
 
 import cartas.framework.Carta;
 
-public class CartaUno extends Carta{
-    // passa os dados para a classe pai
-    public CartaUno(String valor, String cor){
+public class CartaUno extends Carta {
+    public CartaUno(String valor, String cor) {
         super(valor, cor);
     }
 
-    @Override
-    public String toString(){
-        // se for carta curinga (+4 ou troca de cor), não precisamos da cor
-        if (this.getClasse().equals("Preta")){
+    public String toString() {
+        if (this.getClasse().equals("Preta")) {
             return this.getValor();
-        }
-        // para o resto, retorna o valor e a cor
-        else{
-            return this.getValor() + " " + this.getClasse();
+        } else {
+            String var10000 = this.getValor();
+            return var10000 + " " + this.getClasse();
         }
     }
 }
